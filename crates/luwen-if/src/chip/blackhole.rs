@@ -272,7 +272,7 @@ impl Blackhole {
             *o = *i;
         }
 
-        let timeout = timeout.unwrap_or(std::time::Duration::from_millis(500));
+        let timeout = timeout.unwrap_or(std::time::Duration::from_millis(10000));
 
         let queue = self.message_queue.get_or_try_init::<_, PlatformError>(|| {
             let message_queue_info_address = self
