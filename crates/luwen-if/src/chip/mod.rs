@@ -49,7 +49,7 @@ impl Default for ArcMsgOptions {
         Self {
             msg: ArcMsg::Typed(TypedArcMsg::Nop),
             wait_for_done: true,
-            timeout: std::time::Duration::from_secs(1),
+            timeout: std::time::Duration::from_secs(10),
             use_second_mailbox: false,
             addrs: None,
         }

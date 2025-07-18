@@ -538,7 +538,7 @@ macro_rules! common_chip_comms_impls {
                     .map_err(|v| PyException::new_err(v.to_string()))
             }
 
-            #[pyo3(signature = (msg, wait_for_done = true, use_second_mailbox = false, arg0 = 0xffff, arg1 = 0xffff, timeout = 1.0))]
+            #[pyo3(signature = (msg, wait_for_done = true, use_second_mailbox = false, arg0 = 0xffff, arg1 = 0xffff, timeout = 10.0))]
             pub fn arc_msg(&self, msg: u16, wait_for_done: bool, use_second_mailbox: bool, arg0: u16, arg1: u16, timeout: f64) -> PyResult<Option<(u32, u32)>> {
                 match self.0
                     .arc_msg(ArcMsgOptions {

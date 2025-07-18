@@ -222,7 +222,7 @@ fn reset_board() {
         .spawn();
 
     println!("waiting for ddr training to complete");
-    let duration = Duration::from_secs(40);
+    let duration = Duration::from_secs(400);
     thread::sleep(duration);
 
     //delay time seconds

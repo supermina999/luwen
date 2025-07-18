@@ -353,7 +353,7 @@ impl Blackhole {
                 None,
             )?;
 
-            std::thread::sleep(std::time::Duration::from_millis(100));
+            std::thread::sleep(std::time::Duration::from_millis(1000));
 
             if status != 0 {
                 return Err("Failed to write to SPI".into());
@@ -511,21 +511,21 @@ fn default_status() -> InitStatus {
             wait_status: Box::new([WaitStatus::Waiting(None)]),
 
             start_time: std::time::Instant::now(),
-            timeout: std::time::Duration::from_secs(5),
+            timeout: std::time::Duration::from_secs(50),
         },
         dram_status: ComponentStatusInfo::init_waiting(
             "DRAM".to_string(),
-            std::time::Duration::from_secs(300),
+            std::time::Duration::from_secs(3000),
             8,
         ),
         eth_status: ComponentStatusInfo::init_waiting(
             "ETH".to_string(),
-            std::time::Duration::from_secs(15 * 60),
+            std::time::Duration::from_secs(15 * 600),
             14,
         ),
         cpu_status: ComponentStatusInfo::init_waiting(
             "CPU".to_string(),
-            std::time::Duration::from_secs(60),
+            std::time::Duration::from_secs(600),
             4,
         ),
 

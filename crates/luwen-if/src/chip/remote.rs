@@ -248,7 +248,7 @@ impl Wormhole {
                 .collect::<Vec<_>>();
 
             let init_finished = valid_heartbeat.iter().all(|&x| x);
-            if init_finished || start_time.elapsed() > std::time::Duration::from_millis(100) {
+            if init_finished || start_time.elapsed() > std::time::Duration::from_millis(1000) {
                 return Ok(valid_heartbeat);
             }
         }

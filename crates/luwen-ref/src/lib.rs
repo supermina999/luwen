@@ -404,7 +404,7 @@ pub fn comms_callback_inner(
                             noc_y: y as u8,
                             offset: addr,
                         },
-                        std::time::Duration::from_secs(5 * 60),
+                        std::time::Duration::from_secs(5 * 600),
                     )?;
 
                     let sl = unsafe { std::slice::from_raw_parts_mut(data, len as usize) };
@@ -420,7 +420,7 @@ pub fn comms_callback_inner(
                         write32,
                         dma_buffer,
                         command_q_addr,
-                        std::time::Duration::from_secs(5 * 60),
+                        std::time::Duration::from_secs(5 * 600),
                         fake_block,
                         EthCommCoord {
                             coord: op.addr,
@@ -520,7 +520,7 @@ pub fn comms_callback_inner(
                             noc_y: y as u8,
                             offset: addr,
                         },
-                        std::time::Duration::from_secs(5 * 60),
+                        std::time::Duration::from_secs(5 * 600),
                         value,
                     )?;
                 } else {
@@ -530,7 +530,7 @@ pub fn comms_callback_inner(
                         write32,
                         dma_buffer,
                         command_q_addr,
-                        std::time::Duration::from_secs(5 * 60),
+                        std::time::Duration::from_secs(5 * 600),
                         fake_block,
                         EthCommCoord {
                             coord: op.addr,
